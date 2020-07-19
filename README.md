@@ -12,4 +12,4 @@ colored - pip install colored
 # Important Notes
 You do not need python to run this program! Read above for instructions section if you do not have python installed!
 
-![](images/)
+![](images/login.jpg)
