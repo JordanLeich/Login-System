@@ -5,5 +5,5 @@
 def end():
     import time
     print("Reached end of the program... Ending program...\n")
-    time.sleep(3)
+    time.sleep(2)
     quit()

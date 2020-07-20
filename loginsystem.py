@@ -8,8 +8,9 @@ import restart
 # Global variables
 green = fg('green')
 red = fg('red')
+yellow = fg('yellow')
 reset = attr('reset')
-existing_users1 = ['test@gmail.com', 'test123']
+existing_users1 = ['admin@aol.com', 'admin1']
 
 
 def logged_in():
@@ -17,15 +18,18 @@ def logged_in():
 
     user_choice2 = input(str('You have access to our Math Calculator, Anti-Virus Program, or Junk File Cleaner (calc, '
                              'antivirus, junk, or quit): '))
+    print()
 
     if user_choice2.lower() == 'c' or user_choice2.lower() == 'calc' or user_choice2.lower() == 'calculator':
-        calculator.calculator()
+        from calculator import calculator
+        calculator()
 
     elif user_choice2.lower() == 'a' or user_choice2.lower() == 'anti' or user_choice2.lower() == 'antivirus':
-        antivirus.antivirus()
+        import SecureAV
 
     elif user_choice2.lower() == 'j' or user_choice2.lower() == 'junk' or user_choice2.lower() == 'clean':
-        cleaner.cleaner()
+        import Cleaner
+        Cleaner.start()
 
     elif user_choice2.lower() == 'q' or user_choice2.lower() == 'quit':
         end.end()
@@ -49,16 +53,33 @@ def new_account():
             red + 'Error found... A valid email address must include an @ symbol! Restarting sign up page...\n' + reset)
         new_account()
 
-    new_password = input('Please enter a new password to sign up with: ')
+    elif '.com' not in new_email.lower():
+        print(
+            red + 'Error found... A valid email address must include a .com address to reach! Restarting sign up '
+                  'page...\n' + reset)
+        new_account()
+
+    print(yellow + 'All eligible passwords must be a total of 6 or more characters long!\n' + reset)
+    new_password = input(str('Please enter a new password to sign up with: '))
     print()
+
+    if len(new_password) < 6:
+        print(red + 'Your password is not 6 or more characters long! Restarting sign up page...\n' + reset)
+        new_account()
+
     confirm_password = input('Retype your new password for confirmation: ')
     print()
 
-    if new_password == confirm_password:
+    if new_password == confirm_password and len(new_password) >= 6:
+        print(yellow + 'Please keep note of your login information for future usage\n' + reset)
+        print('Your email address - ', green + new_email, reset, '\n')
+        print('Your password - ', green + confirm_password, reset, '\n')
+
         logged_in()
 
     elif new_password != confirm_password:
         print(red + 'Your passwords do not match up correctly! Restarting sign up page...\n' + reset)
+        new_account()
 
     else:
         print(red + 'Error found! Restarting sign up page...\n' + reset)
