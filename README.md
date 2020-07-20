@@ -12,6 +12,6 @@ colored - pip install colored
 # Important Notes
 You do not need python to run this program! Read above for instructions section if you do not have python installed!
 
-You can also visit the site - https://jordanleich.github.io/Login-System/ for additional information!
+You can also visit the official site - https://jordanleich.github.io/Login-System/ for additional information!
 
 ![](images/login.jpg)
