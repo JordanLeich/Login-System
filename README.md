@@ -1,8 +1,8 @@
 # Description
-This is a login system that allows the user to either create or access an existing account. Once the user is successfully logged in, the user will have access to some helpful and useful programs such as a Math Calculator, Anti-Virus Program, and a Junk File Cleaner! These programs were previously created and are separately uploaded into repositories on my github account if you wish to access these programs indivindividually.
+This is a login system that allows the user to either create or access an existing account. One existing account that is built into the program by default has an email address of admin@aol.com and a password of admin1. I recommend using this existing account for quick and easy access, testing, or troubleshooting with my code. Once the user is successfully logged in, the user will have access to some helpful and useful programs such as a Math Calculator, Anti-Virus Program, and a Junk File Cleaner! These programs were previously created and are separately uploaded into repositories on my github account if you wish to access these programs indivindividually.
 
 # Instructions
-Simply download all files and run the loginsystem.py
+Simply download all files and read the requirements section down below. then, run the loginsystem.py
 
 If you do not have python installed, you can download and run the .exe installer file only and then run the exe file.
 
